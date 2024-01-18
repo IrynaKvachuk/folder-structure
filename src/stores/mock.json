@@ -1,0 +1,87 @@
+{
+  "name": "nested-comments",
+  "type": "folder",
+  "children": [
+    {
+      "name": "empty folder",
+      "type": "folder",
+      "children": []
+    },
+    {
+      "name": "folder no children",
+      "type": "folder"
+    },
+    {
+      "name": "folder-1",
+      "type": "folder",
+      "children": [
+        {
+          "name": "index.html",
+          "type": "file"
+        },
+        {
+          "name": "script.js",
+          "type": "file"
+        },
+        {
+          "name": "style.css",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "folder2",
+      "type": "folder",
+      "children": [
+        {
+          "name": "index.html",
+          "type": "file"
+        },
+        {
+          "name": "script.js",
+          "type": "file"
+        },
+        {
+          "name": "style.css",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "folder-3",
+      "type": "folder",
+      "children": [
+        {
+          "name": "folder-33-images",
+          "type": "folder",
+          "children": [
+            {
+              "name": "chip.png",
+              "type": "file"
+            },
+            {
+              "name": "map.png",
+              "type": "file"
+            },
+            {
+              "name": "pattern.png",
+              "type": "file"
+            },
+            {
+              "name": "visa.png",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "index.html",
+          "type": "file"
+        },
+        {
+          "name": "style.css",
+          "type": "file"
+        }
+      ]
+    }
+  ]
+}
