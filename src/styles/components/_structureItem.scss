@@ -1,0 +1,13 @@
+.structure-item {
+  display: flex;
+
+  &_toolbar {
+    display: flex;
+    margin-left: 2rem;
+  }
+
+  &_folder,
+  &_file {
+    display: block;
+  }
+}

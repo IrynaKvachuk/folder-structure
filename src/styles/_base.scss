@@ -1,0 +1,24 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+.rotate {
+  &--90 {
+    transform: rotate(90deg);
+  }
+  &--270 {
+    transform: rotate(270deg);
+  }
+}
