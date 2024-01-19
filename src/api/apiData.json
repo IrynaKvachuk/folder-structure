@@ -1,0 +1,131 @@
+{
+  "id": "ME9E8F",
+  "parentId": "",
+  "name": "main-folder",
+  "type": "folder",
+  "children": [
+    {
+      "id": "sOcH2D",
+      "parentId": "ME9E8F",
+      "name": "empty folder",
+      "type": "folder",
+      "children": []
+    },
+    {
+      "id": "tsYZ8K",
+      "parentId": "ME9E8F",
+      "name": "folder no children",
+      "type": "folder"
+    },
+    {
+      "id": "NTJBQB",
+      "parentId": "ME9E8F",
+      "name": "folder-1",
+      "type": "folder",
+      "children": [
+        {
+          "id": "W0O21X",
+          "parentId": "NTJBQB",
+          "name": "index.html",
+          "type": "file"
+        },
+        {
+          "id": "s64uAD",
+          "parentId": "NTJBQB",
+          "name": "script.js",
+          "type": "file"
+        },
+        {
+          "id": "hEEQ9d",
+          "parentId": "NTJBQB",
+          "name": "style.css",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "id": "dXD3Lh",
+      "parentId": "ME9E8F",
+      "name": "folder2",
+      "type": "folder",
+      "children": [
+        {
+          "id": "IksFNF",
+          "parentId": "dXD3Lh",
+          "name": "index.html",
+          "type": "file"
+        },
+        {
+          "id": "aYW87n",
+          "parentId": "dXD3Lh",
+          "name": "script.js",
+          "type": "file"
+        },
+        {
+          "id": "Ktklen",
+          "parentId": "dXD3Lh",
+          "name": "style.css",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "id": "Oct7W0",
+      "parentId": "ME9E8F",
+      "name": "folder-3",
+      "type": "folder",
+      "children": [
+        {
+          "id": "eioW7F",
+          "parentId": "Oct7W0",
+          "name": "folder-33-images",
+          "type": "folder",
+          "children": [
+            {
+              "id": "pizM3S",
+              "parentId": "eioW7F",
+              "name": "chip.png",
+              "type": "file"
+            },
+            {
+              "id": "NGK5Yi",
+              "parentId": "eioW7F",
+              "name": "map.png",
+              "type": "file"
+            },
+            {
+              "id": "3AseT6",
+              "parentId": "eioW7F",
+              "name": "pattern.png",
+              "type": "file"
+            },
+            {
+              "id": "xxd6Bf",
+              "parentId": "eioW7F",
+              "name": "visa.png",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "id": "Kk7bGw",
+          "parentId": "Oct7W0",
+          "name": "index.html",
+          "type": "file"
+        },
+        {
+          "id": "NECqo2",
+          "parentId": "Oct7W0",
+          "name": "style.css",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "id": "N3Jq52",
+      "parentId": "ME9E8F",
+      "name": "last.txt",
+      "type": "file"
+    }
+  ]
+}
