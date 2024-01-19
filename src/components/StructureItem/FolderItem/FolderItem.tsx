@@ -1,8 +1,14 @@
-import React, { useId, useState } from 'react';
-import { FolderItemIF, STRUCTURE_ITEM_TYPE } from '../../../stores/_common/types/folderStructure';
+import React from 'react';
+import {
+  FileItemIF,
+  FolderItemIF,
+  STRUCTURE_ITEM_TYPE
+} from '../../../store/_common/types/folderStructureTypes';
 import FolderIcon from '../../_icons/FolderIcon';
 import FileItem from '../FileItem/FileItem';
 import StructureItemWrapper from '../StructureItemWrapper/StructureItemWrapper';
+import { observer } from 'mobx-react';
+import Folder from './FolderItem';
 
 interface Props {
   data: FolderItemIF;
@@ -10,39 +16,29 @@ interface Props {
 
 const FolderItem: React.FC<Props> = (props: Props) => {
   const { data } = props;
-  const { name, children } = data;
-
-  const id = useId();
-  const [showChildren, setShowChildren] = useState<boolean>(true);
+  const { id, name, children, isOpen } = data;
 
   return (
-    <StructureItemWrapper
-      key={name}
-      isEmpty={!data.children?.length}
-      showChildren={showChildren}
-      setShowChildren={setShowChildren}
-    >
-      {showChildren ? (
-        <div className="structure-item_file">
-          <FolderIcon size={20} />
-          <div>{name}</div>
+    <StructureItemWrapper key={id} data={data}>
+      <div className="structure-item_file">
+        <FolderIcon size={20} />
+        <div>{name}</div>
+        {isOpen ? (
           <div style={{ marginLeft: '20px' }}>
-            {children?.map((item, index) => (
-              <React.Fragment
-                key={id + name + index} // better to generate on back
-              >
+            {children?.map((item: FolderItemIF | FileItemIF) => (
+              <React.Fragment key={item.id}>
                 {item.type === STRUCTURE_ITEM_TYPE.FOLDER ? (
-                  <FolderItem data={item} />
+                  <Folder data={item} />
                 ) : (
                   <FileItem data={item} />
                 )}
               </React.Fragment>
             ))}
           </div>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
     </StructureItemWrapper>
   );
 };
 
-export default FolderItem;
+export default observer(FolderItem);

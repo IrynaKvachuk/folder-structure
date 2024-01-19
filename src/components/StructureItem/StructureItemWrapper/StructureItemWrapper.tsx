@@ -1,24 +1,18 @@
 import { ReactNode } from 'react';
 import StructureItemToolbar from '../StructureItemToolbar/StructureItemToolbar';
-import { DispatchT, SetStateActionT } from '../../../stores/_common/types/baseTypes';
+import { FileItemIF, FolderItemIF } from '../../../store/_common/types/folderStructureTypes';
 
 interface Props {
-  isEmpty: boolean;
+  data: FolderItemIF | FileItemIF;
   children: ReactNode;
-  showChildren?: boolean;
-  setShowChildren?: DispatchT<SetStateActionT<boolean>>;
 }
 
 const StructureItemWrapper = (props: Props) => {
-  const { isEmpty, children, showChildren = true, setShowChildren = () => {} } = props;
+  const { data, children } = props;
 
   return (
     <div className="structure-item">
-      <StructureItemToolbar
-        isEmpty={isEmpty}
-        showChildren={showChildren}
-        setShowChildren={setShowChildren}
-      />
+      <StructureItemToolbar data={data} />
       {children}
     </div>
   );

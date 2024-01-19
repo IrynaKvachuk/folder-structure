@@ -1,4 +1,4 @@
-import { FileItemIF } from '../../../stores/_common/types/folderStructure';
+import { FileItemIF } from '../../../store/_common/types/folderStructureTypes';
 import DocumentIcon from '../../_icons/DocumentIcon';
 import StructureItemWrapper from '../StructureItemWrapper/StructureItemWrapper';
 
@@ -11,7 +11,7 @@ const FileItem: React.FC<Props> = (props: Props) => {
   const { name } = data;
 
   return (
-    <StructureItemWrapper isEmpty={true}>
+    <StructureItemWrapper data={data}>
       <div className="structure-item_file">
         <DocumentIcon size={20} />
         {name}

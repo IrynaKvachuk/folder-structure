@@ -1,22 +1,21 @@
-import { DispatchT, SetStateActionT } from '../../../stores/_common/types/baseTypes';
+import {
+  FileItemIF,
+  FolderItemIF,
+  STRUCTURE_ITEM_TYPE
+} from '../../../store/_common/types/folderStructureTypes';
 import ShowChildrenBtn from './ShowChildrenBtn/ShowChildrenBtn';
 
 interface Props {
-  isEmpty: boolean;
-  showChildren: boolean;
-  setShowChildren: DispatchT<SetStateActionT<boolean>>;
+  data: FolderItemIF | FileItemIF;
 }
 
 const StructureItemToolbar: React.FC<Props> = (props: Props) => {
-  const { isEmpty, showChildren, setShowChildren } = props;
+  const { data } = props;
+  const { type } = data;
 
   return (
     <section className="structure-item_toolbar">
-      <ShowChildrenBtn
-        visible={!isEmpty}
-        showChildren={showChildren}
-        setShowChildren={setShowChildren}
-      />
+      {type === STRUCTURE_ITEM_TYPE.FOLDER && <ShowChildrenBtn folder={data} />}
     </section>
   );
 };

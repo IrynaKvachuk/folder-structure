@@ -1,25 +1,28 @@
 import { ButtonWrapper } from '../../../_common';
 import ArrowIcon from '../../../_icons/ArrowIcon';
 import ToolbarItem from '../ToolbarItem/ToolbarItem';
-import { DispatchT, SetStateActionT } from '../../../../stores/_common/types/baseTypes';
+import { FolderItemIF } from '../../../../store/_common/types/folderStructureTypes';
+import { useStore } from '../../../../hooks/useStore';
 
 interface Props {
-  visible: boolean;
-  showChildren: boolean;
-  setShowChildren: DispatchT<SetStateActionT<boolean>>;
+  folder: FolderItemIF;
 }
 
 const ShowChildrenBtn: React.FC<Props> = (props: Props) => {
-  const { visible, showChildren, setShowChildren } = props;
+  const { folder } = props;
+  const { isOpen, children } = folder;
 
-  return visible ? (
+  const store = useStore();
+  const { folderStructureStore } = store;
+
+  const handleToggle = () => {
+    folderStructureStore.toggleFolder(folder);
+  };
+
+  return children?.length ? (
     <ToolbarItem>
-      <ButtonWrapper
-        onClick={() => {
-          setShowChildren((prevState) => !prevState);
-        }}
-      >
-        <ArrowIcon size={20} className={showChildren ? 'rotate--270' : 'rotate--90'} />
+      <ButtonWrapper onClick={handleToggle}>
+        <ArrowIcon size={20} className={isOpen ? 'rotate--270' : 'rotate--90'} />
       </ButtonWrapper>
     </ToolbarItem>
   ) : null;
