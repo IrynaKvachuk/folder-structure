@@ -1,4 +1,4 @@
-import { ButtonClickT } from '../../../stores/_common/types/baseTypes';
+import { ButtonClickT } from '../../../store/_common/types/baseTypes';
 
 interface OnButtonClick extends ButtonClickT {
   onClick: (props: ButtonClickT) => void;

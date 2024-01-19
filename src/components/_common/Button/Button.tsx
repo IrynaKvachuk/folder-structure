@@ -1,7 +1,7 @@
 import { useState, ReactNode, useEffect } from 'react';
 import Loader from '../../_icons/LoaderIcon';
 import ItemWrapper from '../ItemWrapper';
-import { ButtonClickT } from '../../../stores/_common/types/baseTypes';
+import { ButtonClickT } from '../../../store/_common/types/baseTypes';
 import { onButtonClick } from './events';
 
 interface Props {
