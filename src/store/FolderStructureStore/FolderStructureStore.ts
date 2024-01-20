@@ -3,6 +3,7 @@ import { FileItemIF, FolderItemIF } from '../_common/types/folderStructureTypes'
 import { RootStore } from '../store';
 import { getFolderStructure } from '../../api/folderStructureAPI';
 import { addIsOpenProperty } from './utils';
+import { deleteItem } from './actions';
 
 class FolderStrucutreStore {
   rootStore: RootStore;
@@ -15,7 +16,8 @@ class FolderStrucutreStore {
       rootFolder: observable,
       fetchingData: observable,
       loadStructure: action,
-      toggleFolder: action
+      toggleFolder: action,
+      deleteItem: action
     });
 
     this.rootStore = rootStore;
@@ -36,6 +38,8 @@ class FolderStrucutreStore {
   toggleFolder = (folder: FolderItemIF) => {
     folder.isOpen = !folder.isOpen;
   };
+
+  deleteItem = deleteItem;
 }
 
 export default FolderStrucutreStore;

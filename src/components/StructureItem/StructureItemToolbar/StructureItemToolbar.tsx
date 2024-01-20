@@ -3,6 +3,7 @@ import {
   FolderItemIF,
   STRUCTURE_ITEM_TYPE
 } from '../../../store/_common/types/folderStructureTypes';
+import DeleteItemBtn from './DeleteItemBtn/DeleteItemBtn';
 import ShowChildrenBtn from './ShowChildrenBtn/ShowChildrenBtn';
 
 interface Props {
@@ -16,6 +17,7 @@ const StructureItemToolbar: React.FC<Props> = (props: Props) => {
   return (
     <section className="structure-item_toolbar">
       {type === STRUCTURE_ITEM_TYPE.FOLDER && <ShowChildrenBtn folder={data} />}
+      <DeleteItemBtn data={data} />
     </section>
   );
 };
