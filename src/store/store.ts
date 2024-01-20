@@ -1,12 +1,12 @@
-import FolderStrucutreStore from './FolderStructureStore/FolderStructureStore';
+import FolderStructureStore from './domainStores/FolderStructureStore/FolderStructureStore';
 
 export class RootStore {
   // userStore: UserStore;
-  folderStructureStore: FolderStrucutreStore;
+  folderStructureStore: FolderStructureStore;
 
   constructor() {
     // this.userStore = new UserStore(this);
-    this.folderStructureStore = new FolderStrucutreStore(this);
+    this.folderStructureStore = new FolderStructureStore(this);
   }
 }
 export const store = new RootStore();

@@ -3,8 +3,6 @@ export enum STRUCTURE_ITEM_TYPE {
   FILE = 'file'
 }
 
-export interface StructureItemIF {}
-
 export interface FileItemIF {
   id: string;
   parentId: string;
@@ -17,6 +15,8 @@ export interface FolderItemIF {
   parentId: string;
   type: STRUCTURE_ITEM_TYPE.FOLDER;
   name: string;
-  children?: Array<FolderItemIF | FileItemIF>;
+  children?: Array<StructureItemType>;
   isOpen: boolean;
 }
+
+export type StructureItemType = FileItemIF | FolderItemIF;

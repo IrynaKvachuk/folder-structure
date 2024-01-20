@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import StructureItemToolbar from '../StructureItemToolbar/StructureItemToolbar';
-import { FileItemIF, FolderItemIF } from '../../../store/_common/types/folderStructureTypes';
+import { StructureItemType } from '../../../store/_common/types/folderStructureTypes';
 
 interface Props {
-  data: FolderItemIF | FileItemIF;
+  data: StructureItemType;
   children: ReactNode;
 }
 

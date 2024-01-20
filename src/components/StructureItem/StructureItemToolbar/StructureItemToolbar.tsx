@@ -1,13 +1,12 @@
 import {
-  FileItemIF,
-  FolderItemIF,
-  STRUCTURE_ITEM_TYPE
+  STRUCTURE_ITEM_TYPE,
+  StructureItemType
 } from '../../../store/_common/types/folderStructureTypes';
 import DeleteItemBtn from './DeleteItemBtn/DeleteItemBtn';
 import ShowChildrenBtn from './ShowChildrenBtn/ShowChildrenBtn';
 
 interface Props {
-  data: FolderItemIF | FileItemIF;
+  data: StructureItemType;
 }
 
 const StructureItemToolbar: React.FC<Props> = (props: Props) => {

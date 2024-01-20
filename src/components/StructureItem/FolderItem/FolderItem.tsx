@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  FileItemIF,
   FolderItemIF,
-  STRUCTURE_ITEM_TYPE
+  STRUCTURE_ITEM_TYPE,
+  StructureItemType
 } from '../../../store/_common/types/folderStructureTypes';
 import FolderIcon from '../../_icons/FolderIcon';
 import FileItem from '../FileItem/FileItem';
@@ -20,12 +20,12 @@ const FolderItem: React.FC<Props> = (props: Props) => {
 
   return (
     <StructureItemWrapper key={id} data={data}>
-      <div className="structure-item_file">
+      <div className="structure-item_folder">
         <FolderIcon size={20} />
         <div>{name}</div>
         {isOpen ? (
           <div style={{ marginLeft: '20px' }}>
-            {children?.map((item: FolderItemIF | FileItemIF) => (
+            {children?.map((item: StructureItemType) => (
               <React.Fragment key={item.id}>
                 {item.type === STRUCTURE_ITEM_TYPE.FOLDER ? (
                   <Folder data={item} />

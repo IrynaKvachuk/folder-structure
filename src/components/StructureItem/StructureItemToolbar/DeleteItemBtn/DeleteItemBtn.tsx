@@ -1,10 +1,10 @@
 import { ButtonWrapper } from '../../../_common';
 import ToolbarItem from '../ToolbarItem/ToolbarItem';
-import { FileItemIF, FolderItemIF } from '../../../../store/_common/types/folderStructureTypes';
+import { StructureItemType } from '../../../../store/_common/types/folderStructureTypes';
 import { useStore } from '../../../../hooks/useStore';
 
 interface Props {
-  data: FolderItemIF | FileItemIF;
+  data: StructureItemType;
 }
 
 const DeleteItemBtn: React.FC<Props> = (props: Props) => {
