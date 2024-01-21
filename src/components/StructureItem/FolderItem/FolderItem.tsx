@@ -16,9 +16,9 @@ interface Props {
 
 const FolderItem: React.FC<Props> = (props: Props) => {
   const { data } = props;
-  const { id, name, children, isOpen } = data;
+  const { id, name, children, isOpen, visible } = data;
 
-  return (
+  return visible ? (
     <StructureItemWrapper key={id} data={data}>
       <div className="structure-item_folder">
         <FolderIcon size={20} />
@@ -38,7 +38,7 @@ const FolderItem: React.FC<Props> = (props: Props) => {
         ) : null}
       </div>
     </StructureItemWrapper>
-  );
+  ) : null;
 };
 
 export default observer(FolderItem);

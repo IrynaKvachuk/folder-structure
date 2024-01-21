@@ -1,4 +1,8 @@
-import { StructureItemType, STRUCTURE_ITEM_TYPE } from '../../_common/types/folderStructureTypes';
+import {
+  StructureItemType,
+  STRUCTURE_ITEM_TYPE,
+  FolderItemIF
+} from '../../_common/types/folderStructureTypes';
 
 const addIsOpenProperty = (obj: StructureItemType) => {
   if (obj.type !== STRUCTURE_ITEM_TYPE.FOLDER) return obj;
@@ -9,8 +13,11 @@ const addIsOpenProperty = (obj: StructureItemType) => {
   return;
 };
 
-const addParams = (data: StructureItemType) => {
+const addParams = (data: StructureItemType, parent: FolderItemIF | null) => {
   // config for all items
+  data.visible = true;
+  data.parent = null;
+
   if (data.type === STRUCTURE_ITEM_TYPE.FOLDER) {
     // config for folders
     addIsOpenProperty(data);
@@ -18,7 +25,7 @@ const addParams = (data: StructureItemType) => {
     if (data.children && data.children.length > 0) {
       // proceed children
       for (const child of data.children) {
-        addParams(child);
+        addParams(child, data);
       }
     }
   }
@@ -27,7 +34,7 @@ const addParams = (data: StructureItemType) => {
 };
 
 export const prepareData = (data: StructureItemType): StructureItemType => {
-  addParams(data);
+  addParams(data, null);
 
   return data;
 };

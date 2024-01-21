@@ -8,6 +8,8 @@ export interface FileItemIF {
   parentId: string;
   type: STRUCTURE_ITEM_TYPE.FILE;
   name: string;
+  visible: boolean; // used with search text
+  parent: FolderItemIF | null;
 }
 
 export interface FolderItemIF {
@@ -17,6 +19,8 @@ export interface FolderItemIF {
   name: string;
   children?: Array<StructureItemType>;
   isOpen: boolean;
+  visible: boolean; // used with search text
+  parent: FolderItemIF | null;
 }
 
 export type StructureItemType = FileItemIF | FolderItemIF;

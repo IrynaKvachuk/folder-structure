@@ -1,8 +1,7 @@
-import { makeAutoObservable, observable, action, computed } from 'mobx';
+import { makeAutoObservable, observable, action } from 'mobx';
 import { StructureItemType, FolderItemIF } from '../../_common/types/folderStructureTypes';
 import { RootStore } from '../../store';
-import { deleteItem, loadStructure } from './FolderStoreActions';
-import { filteredBySearch } from './FolderStoreComputed';
+import { deleteItem, findStructure, loadStructure } from './FolderStoreActions';
 
 class FolderStructureStore {
   rootStore: RootStore;
@@ -19,7 +18,7 @@ class FolderStructureStore {
       loadStructure: action,
       toggleFolder: action,
       deleteItem: action,
-      filteredFolderStructure: computed
+      filteredFolderStructure: action
     });
 
     this.rootStore = rootStore;
@@ -30,12 +29,10 @@ class FolderStructureStore {
   loadStructure = loadStructure;
   deleteItem = deleteItem;
   toggleFolder = (folder: FolderItemIF) => (folder.isOpen = !folder.isOpen);
-  setSearchQuery = (term: string) => (this.searchQuery = term);
-
-  //computed
-  get filteredFolderStructure() {
-    return filteredBySearch(this);
-  }
+  setSearchQuery = (query: string) => (this.searchQuery = query);
+  filteredFolderStructure = (query: string) => {
+    if (this.rootFolder.length > 0) findStructure(this.rootFolder[0], query.toLowerCase(), null);
+  };
 }
 
 export default FolderStructureStore;
