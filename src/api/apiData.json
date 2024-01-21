@@ -12,12 +12,6 @@
       "children": []
     },
     {
-      "id": "tsYZ8K",
-      "parentId": "ME9E8F",
-      "name": "folder no children",
-      "type": "folder"
-    },
-    {
       "id": "NTJBQB",
       "parentId": "ME9E8F",
       "name": "folder-1",
@@ -32,7 +26,7 @@
         {
           "id": "s64uAD",
           "parentId": "NTJBQB",
-          "name": "script.js",
+          "name": "fix.js",
           "type": "file"
         },
         {
@@ -72,7 +66,7 @@
     {
       "id": "Oct7W0",
       "parentId": "ME9E8F",
-      "name": "folder-3",
+      "name": "folder with files",
       "type": "folder",
       "children": [
         {

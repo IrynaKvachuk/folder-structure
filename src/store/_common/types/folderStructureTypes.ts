@@ -17,7 +17,7 @@ export interface FolderItemIF {
   parentId: string;
   type: STRUCTURE_ITEM_TYPE.FOLDER;
   name: string;
-  children?: Array<StructureItemType>;
+  children: Array<StructureItemType>;
   isOpen: boolean;
   visible: boolean; // used with search text
   parent: FolderItemIF | null;
