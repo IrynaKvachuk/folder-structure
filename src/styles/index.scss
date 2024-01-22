@@ -1,6 +1,16 @@
+// UTILS
+@import './utils/variables';
+
 // BASE
 @import './base';
+
+// LAYOUT
+@import './layout/container';
+@import './layout/header';
 
 // COMPONENTS
 @import './components/folderStructure';
 @import './components/structureItem';
+
+// PAGES
+@import './pages/home';

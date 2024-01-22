@@ -6,7 +6,7 @@ interface Props {
 
 const ToolbarItem: React.FC<Props> = (props: Props) => {
   const { children } = props;
-  return <div>{children}</div>;
+  return <div className="structure-item_toolbar__item">{children}</div>;
 };
 
 export default ToolbarItem;

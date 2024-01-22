@@ -1,0 +1,17 @@
+.app_header {
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.2rem;
+  padding: 0 2rem;
+  border-bottom: 0.2rem solid;
+
+  &-logo {
+    margin-left: 1rem;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
