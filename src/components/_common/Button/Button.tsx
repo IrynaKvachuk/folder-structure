@@ -1,4 +1,4 @@
-import { useState, ReactNode, useEffect } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import Loader from '../../_icons/LoaderIcon';
 import ItemWrapper from '../ItemWrapper';
 import { ButtonClickT } from '../../../store/_common/types/baseTypes';
@@ -34,7 +34,7 @@ const ButtonWrapper: React.FC<Props> = (props: Props) => {
   return (
     <ItemWrapper className={itemClassName}>
       <button
-        className={buttonClassName}
+        className={`btn app_btn ${buttonClassName}`}
         title={title}
         disabled={disabled}
         onClick={(event) => onButtonClick({ event, setIsLoading, onClick })}
@@ -45,4 +45,4 @@ const ButtonWrapper: React.FC<Props> = (props: Props) => {
   );
 };
 
-export default ButtonWrapper;
+export default React.memo(ButtonWrapper);

@@ -1,13 +1,68 @@
 .structure-item {
+  width: 100%;
   display: flex;
+  margin: 0.2rem 1rem;
+  padding: 0.4rem;
+  border: 0.1rem solid $color-font-dark-gray;
+  font-size: 1.3rem;
 
   &_toolbar {
     display: flex;
-    margin-left: 2rem;
+
+    &__item {
+      margin: 0 0.4rem;
+
+      & .btn {
+        width: 2.2rem;
+        height: 2.2rem;
+        background-color: transparent;
+        border: 0.1rem solid;
+      }
+
+      & .delete-item-btn {
+        font-size: 1.5rem;
+        background-color: transparent;
+        color: $color-font-dark-gray;
+        border: 0.2rem solid $color-font-black;
+
+        &:hover {
+          transform: rotate(360deg);
+          color: $color-font-white;
+          background-color: $color-font-black;
+          border-radius: 50%;
+        }
+      }
+
+      & .show-children-btn {
+        margin: auto;
+        margin-bottom: 1.3rem !important;
+        font-size: 2rem;
+        color: $color-font-light-gray;
+        background-color: $color-font-dark-gray;
+        border: 0.1rem $color-font-black solid;
+
+        &:hover {
+          color: $color-font-white;
+          background-color: $color-font-black;
+        }
+      }
+    }
   }
 
   &_folder,
   &_file {
     display: block;
+  }
+
+  &_folder {
+    &__caption {
+      display: flex;
+      justify-content: baseline;
+      align-items: center;
+
+      & .icon-folder {
+        margin-right: 0.5rem;
+      }
+    }
   }
 }

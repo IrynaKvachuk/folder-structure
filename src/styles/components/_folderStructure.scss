@@ -1,2 +1,26 @@
 .folder-structure {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &_search-bar {
+    width: 100%;
+
+    & .search-bar {
+      margin-bottom: 0.3rem;
+      padding-left: 1rem;
+      background-color: $color-font-dark-gray;
+
+      &_input {
+        width: 30rem;
+      }
+    }
+  }
+
+  &_content {
+    width: 50rem;
+    margin: 1rem auto;
+  }
 }

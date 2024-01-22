@@ -1,6 +1,6 @@
 import './styles/index.scss';
 import Pages from './pages/Pages';
-import Header from './layout/Header';
+import Header from './layout/Header/Header';
 
 function App() {
   return (

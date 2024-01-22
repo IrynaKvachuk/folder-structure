@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { observer } from 'mobx-react';
 import FolderItem from '../StructureItem/FolderItem/FolderItem';
 import { useStore } from '../../hooks/useStore';
@@ -17,16 +17,19 @@ const FolderStructure: React.FC = () => {
   return (
     <section className="folder-structure">
       <SearchBarWrapper
+        className="folder-structure_search-bar"
         callback={(query: string) => folderStructureStore.filteredFolderStructure(query)}
       >
-        {folderStructureStore.rootFolder.length
-          ? folderStructureStore.rootFolder.map((item: StructureItemType) => {
-              const { id, type } = item;
+        <div className="folder-structure_content">
+          {folderStructureStore.rootFolder.length
+            ? folderStructureStore.rootFolder.map((item: StructureItemType) => {
+                const { id, type } = item;
 
-              if (type === STRUCTURE_ITEM_TYPE.FILE) return <FileItem key={id} data={item} />;
-              return <FolderItem key={id} data={item} />;
-            })
-          : 'No structure data'}
+                if (type === STRUCTURE_ITEM_TYPE.FILE) return <FileItem key={id} data={item} />;
+                return <FolderItem key={id} data={item} />;
+              })
+            : 'No structure data'}
+        </div>
       </SearchBarWrapper>
     </section>
   );

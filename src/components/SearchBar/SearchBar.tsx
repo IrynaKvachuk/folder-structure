@@ -6,12 +6,13 @@ import { observer } from 'mobx-react';
 interface Props {
   label?: string;
   placeholder?: string;
+  className?: string;
   children: ReactNode;
   callback: (query: string) => void;
 }
 
 const SearchBarWrapper: React.FC<Props> = (props: Props) => {
-  const { label = '', placeholder = 'search..', children, callback } = props;
+  const { label = '', placeholder = 'search..', className = '', children, callback } = props;
 
   const searchCallback = useCallback((query: string) => callback(query), [callback]);
 
@@ -23,18 +24,19 @@ const SearchBarWrapper: React.FC<Props> = (props: Props) => {
   }, [deferredQuery, searchCallback]);
 
   return (
-    <div className="search-bar">
-      <label>
-        {label}
-        <input
-          type="text"
-          className="search-bar_input"
-          value={query}
-          placeholder={placeholder}
-          onChange={(event) => onSearchBarChange({ event, setQuery })}
-        />
-      </label>
-
+    <div className={`${className}`}>
+      <div className="search-bar">
+        <label>
+          {label}
+          <input
+            type="text"
+            className="search-bar_input"
+            value={query}
+            placeholder={placeholder}
+            onChange={(event) => onSearchBarChange({ event, setQuery })}
+          />
+        </label>
+      </div>
       <Suspense fallback={<LoaderIcon />}>
         <div>{children}</div>
       </Suspense>

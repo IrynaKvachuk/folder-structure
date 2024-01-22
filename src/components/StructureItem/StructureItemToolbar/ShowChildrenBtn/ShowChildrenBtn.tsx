@@ -21,7 +21,7 @@ const ShowChildrenBtn: React.FC<Props> = (props: Props) => {
 
   return children?.length ? (
     <ToolbarItem>
-      <ButtonWrapper onClick={handleToggle}>
+      <ButtonWrapper buttonClassName="show-children-btn" onClick={handleToggle}>
         <ArrowIcon size={20} className={isOpen ? 'rotate--270' : 'rotate--90'} />
       </ButtonWrapper>
     </ToolbarItem>

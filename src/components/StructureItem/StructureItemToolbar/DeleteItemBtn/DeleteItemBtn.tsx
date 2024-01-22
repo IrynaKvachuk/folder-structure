@@ -20,7 +20,13 @@ const DeleteItemBtn: React.FC<Props> = (props: Props) => {
 
   return (
     <ToolbarItem>
-      <ButtonWrapper onClick={handleDeleteItem}>x</ButtonWrapper>
+      <ButtonWrapper
+        buttonClassName="delete-item-btn"
+        title="delete item"
+        onClick={handleDeleteItem}
+      >
+        x
+      </ButtonWrapper>
     </ToolbarItem>
   );
 };

@@ -21,11 +21,13 @@ const FolderItem: React.FC<Props> = (props: Props) => {
   return visible ? (
     <StructureItemWrapper key={id} data={data}>
       <div className="structure-item_folder">
-        <FolderIcon size={20} />
-        <div>{name}</div>
+        <div className="structure-item_folder__caption">
+          <FolderIcon size={20} />
+          <div>{name}</div>
+        </div>
         {isOpen ? (
           <div style={{ marginLeft: '20px' }}>
-            {children?.map((item: StructureItemType) => (
+            {children.map((item: StructureItemType) => (
               <React.Fragment key={item.id}>
                 {item.type === STRUCTURE_ITEM_TYPE.FOLDER ? (
                   <Folder data={item} />
