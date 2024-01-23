@@ -5,16 +5,36 @@
   justify-content: center;
   align-items: center;
 
-  &_search-bar {
+  &_toolbar {
     width: 100%;
+    margin-bottom: 0.3rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    background-color: $color-font-dark-gray;
 
-    & .search-bar {
-      margin-bottom: 0.3rem;
-      padding-left: 1rem;
-      background-color: $color-font-dark-gray;
+    & > div {
+      margin-right: 1rem;
+    }
 
-      &_input {
-        width: 30rem;
+    &__reload-btn {
+      font-size: 1.5rem;
+      background-color: $color-font-white;
+      color: $color-font-dark-gray;
+      border: 0.2rem solid $color-font-black;
+
+      &:hover {
+        transform: rotate(360deg);
+        color: $color-font-white;
+        background-color: $color-font-black;
+        border-radius: 50%;
+      }
+    }
+    &__search-bar {
+      & .search-bar {
+        &_input {
+          width: 30rem;
+        }
       }
     }
   }

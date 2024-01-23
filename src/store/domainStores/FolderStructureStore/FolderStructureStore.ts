@@ -6,14 +6,14 @@ import { deleteItem, findStructure, loadStructure } from './FolderStoreActions';
 class FolderStructureStore {
   rootStore: RootStore;
   rootFolder: Array<StructureItemType> = [];
-  fetchingData: boolean = false;
+  isPending: boolean = false;
   searchQuery: string = '';
 
   constructor(rootStore: RootStore) {
     makeAutoObservable(this, {
       rootStore: false,
       rootFolder: observable,
-      fetchingData: observable,
+      isPending: observable,
       searchQuery: observable,
       loadStructure: action,
       toggleFolder: action,
@@ -22,13 +22,13 @@ class FolderStructureStore {
     });
 
     this.rootStore = rootStore;
-    this.loadStructure();
   }
 
   // actions
   loadStructure = loadStructure;
   deleteItem = deleteItem;
   toggleFolder = (folder: FolderItemIF) => (folder.isOpen = !folder.isOpen);
+  setFolderStructurePending = (isPending: boolean) => (this.isPending = isPending);
   setSearchQuery = (query: string) => (this.searchQuery = query);
   filteredFolderStructure = (query: string) => {
     if (this.rootFolder.length > 0) findStructure(this.rootFolder[0], query.toLowerCase(), null);

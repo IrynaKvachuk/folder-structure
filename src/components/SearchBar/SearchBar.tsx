@@ -1,4 +1,4 @@
-import { ReactNode, Suspense, useCallback, useDeferredValue, useEffect, useState } from 'react';
+import { Suspense, useCallback, useDeferredValue, useEffect, useState } from 'react';
 import LoaderIcon from '../_icons/LoaderIcon';
 import { onSearchBarChange } from './events';
 import { observer } from 'mobx-react';
@@ -7,12 +7,11 @@ interface Props {
   label?: string;
   placeholder?: string;
   className?: string;
-  children: ReactNode;
   callback: (query: string) => void;
 }
 
-const SearchBarWrapper: React.FC<Props> = (props: Props) => {
-  const { label = '', placeholder = 'search..', className = '', children, callback } = props;
+const SearchBar: React.FC<Props> = (props: Props) => {
+  const { label = '', placeholder = 'search..', className = '', callback } = props;
 
   const searchCallback = useCallback((query: string) => callback(query), [callback]);
 
@@ -37,11 +36,9 @@ const SearchBarWrapper: React.FC<Props> = (props: Props) => {
           />
         </label>
       </div>
-      <Suspense fallback={<LoaderIcon />}>
-        <div>{children}</div>
-      </Suspense>
+      <Suspense fallback={<LoaderIcon />} />
     </div>
   );
 };
 
-export default observer(SearchBarWrapper);
+export default observer(SearchBar);

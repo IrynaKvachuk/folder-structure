@@ -9,12 +9,14 @@ import { store } from '../../store';
 import { prepareData } from './FolderStoreUtils';
 
 export const loadStructure = () => {
+  store.folderStructureStore.setFolderStructurePending(true);
   getFolderStructure().then((data) => {
     // prepare data, add additional params for items
     const structure = prepareData(data);
 
     runInAction(() => {
-      store.folderStructureStore.rootFolder.push(structure);
+      store.folderStructureStore.rootFolder = [structure];
+      store.folderStructureStore.setFolderStructurePending(false);
     });
   });
 
