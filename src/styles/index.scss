@@ -7,9 +7,11 @@
 // LAYOUT
 @import './layout/container';
 @import './layout/header';
+@import './layout/modal';
 
 // COMPONENTS
-@import './components/folderStructure';
+@import './components/folderStructure/folderStructure';
+@import './components/folderStructure/userSetter';
 @import './components/searchBar';
 @import './components/structureItem';
 

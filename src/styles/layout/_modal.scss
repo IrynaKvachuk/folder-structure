@@ -1,0 +1,58 @@
+.body--modal-open {
+  overflow: hidden;
+
+  @media (min-width: $breakpoint-max-small-screen) {
+    padding-right: 1.5rem;
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: $color-modal-overlay;
+  z-index: 1000;
+
+  &__content {
+    position: relative;
+    min-width: 20rem;
+    min-height: 15rem;
+    border-radius: 0.4rem;
+    background-color: $color-white;
+    box-shadow: 0 0 10rem 0 rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+  }
+  &__button-close {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    padding: inherit;
+    border: 0.1rem solid $color-white;
+    border-radius: 50%;
+    color: $color-font-light-gray;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: $color-font-dark-gray;
+
+    &:hover {
+      transform: scale(1.2);
+      opacity: 1;
+      color: $color-white;
+    }
+    &:active {
+      transform: scale(0.7);
+    }
+  }
+
+  @media (max-width: $breakpoint-max-tablet) {
+    &__content {
+      display: grid;
+      place-items: center;
+    }
+  }
+}

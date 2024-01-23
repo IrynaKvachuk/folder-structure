@@ -1,0 +1,12 @@
+.user-setter {
+  &_btn {
+    width: 2.4rem;
+    height: 2.4rem;
+    box-shadow: 0.3rem 0.3rem $color-highlight-bright;
+
+    &:active {
+      box-shadow: none;
+      transform: translate(0.3rem, 0.3rem);
+    }
+  }
+}

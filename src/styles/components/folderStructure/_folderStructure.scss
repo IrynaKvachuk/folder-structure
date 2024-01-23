@@ -19,14 +19,14 @@
 
     &__reload-btn {
       font-size: 1.5rem;
-      background-color: $color-font-white;
+      background-color: $color-white;
       color: $color-font-dark-gray;
-      border: 0.2rem solid $color-font-black;
+      border: 0.2rem solid $color-black;
 
       &:hover {
         transform: rotate(360deg);
-        color: $color-font-white;
-        background-color: $color-font-black;
+        color: $color-white;
+        background-color: $color-black;
         border-radius: 50%;
       }
     }

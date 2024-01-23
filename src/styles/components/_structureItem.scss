@@ -1,7 +1,7 @@
 .structure-item {
   width: 100%;
   display: flex;
-  margin: 0.2rem 1rem;
+  margin: 0.2rem 0.3rem;
   padding: 0.4rem;
   border: 0.1rem solid $color-font-dark-gray;
   font-size: 1.3rem;
@@ -10,11 +10,9 @@
     display: flex;
 
     &__item {
-      margin: 0 0.4rem;
+      margin: 0 0.3rem;
 
       & .btn {
-        width: 2.2rem;
-        height: 2.2rem;
         background-color: transparent;
         border: 0.1rem solid;
       }
@@ -23,12 +21,12 @@
         font-size: 1.5rem;
         background-color: transparent;
         color: $color-font-dark-gray;
-        border: 0.2rem solid $color-font-black;
+        border: 0.2rem solid $color-black;
 
         &:hover {
           transform: rotate(360deg);
-          color: $color-font-white;
-          background-color: $color-font-black;
+          color: $color-white;
+          background-color: $color-black;
           border-radius: 50%;
         }
       }
@@ -39,11 +37,11 @@
         font-size: 2rem;
         color: $color-font-light-gray;
         background-color: $color-font-dark-gray;
-        border: 0.1rem $color-font-black solid;
+        border: 0.1rem $color-black solid;
 
         &:hover {
-          color: $color-font-white;
-          background-color: $color-font-black;
+          color: $color-white;
+          background-color: $color-black;
         }
       }
     }
