@@ -60,7 +60,7 @@ const open = (node: StructureItemType) => {
 const goDown = (node: StructureItemType, close: boolean) => {
   const isFolder = node.type === STRUCTURE_ITEM_TYPE.FOLDER;
 
-  node.visible = true;
+  if (node.allowed) node.visible = true;
   if (isFolder) {
     node.isOpen = true;
     const children = (node as FolderItemIF).children || [];
@@ -84,7 +84,7 @@ export const findStructure = (
   const match = node.name.toLowerCase().includes(str);
 
   node.parent = parent;
-  if (match) {
+  if (match && node.allowed) {
     open(node);
   } else {
     node.visible = false;

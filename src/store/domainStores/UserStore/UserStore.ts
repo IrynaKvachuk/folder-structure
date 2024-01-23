@@ -34,6 +34,7 @@ class UserStore {
   // user must NOT receive unauthorized data
   getUserStructure = () => {
     getUserStructure(this.rootStore.folderStructureStore.rootFolder[0], this.userData.role, null);
+    this.rootStore.folderStructureStore.filteredFolderStructure();
   };
 }
 

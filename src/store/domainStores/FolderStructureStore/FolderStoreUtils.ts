@@ -15,8 +15,9 @@ const addIsOpenProperty = (obj: StructureItemType) => {
 
 const addParams = (data: StructureItemType, parent: FolderItemIF | null) => {
   // config for all items
-  data.visible = true;
+  data.visible = true; // to filter by search
   data.parent = null;
+  data.allowed = false; // to check authorization
 
   if (data.type === STRUCTURE_ITEM_TYPE.FOLDER) {
     // config for folders

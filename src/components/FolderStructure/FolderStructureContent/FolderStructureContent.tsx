@@ -18,7 +18,7 @@ const FolderStructureContent: React.FC = () => {
     <div className="folder-structure_content">
       {isPending ? (
         <LoaderIcon />
-      ) : rootFolder.length ? (
+      ) : rootFolder.length && rootFolder[0].visible ? (
         rootFolder.map((item: StructureItemType) => {
           const { id, type } = item;
 
@@ -26,7 +26,7 @@ const FolderStructureContent: React.FC = () => {
           return <FolderItem key={id} data={item} />;
         })
       ) : (
-        'No structure data'
+        <h2 className="folder-structure_no-data">No stracture data</h2>
       )}
     </div>
   );

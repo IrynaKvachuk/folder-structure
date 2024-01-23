@@ -10,9 +10,10 @@ export interface FileItemIF {
   parentId: string;
   type: STRUCTURE_ITEM_TYPE.FILE;
   name: string;
-  visible: boolean; // used with search text
+  visible: boolean; // to filter by search
   parent: FolderItemIF | null;
   rights: USER_ROLE_TYPE;
+  allowed: boolean; // to check authorization
 }
 
 export interface FolderItemIF {
@@ -22,9 +23,10 @@ export interface FolderItemIF {
   name: string;
   children: Array<StructureItemType>;
   isOpen: boolean;
-  visible: boolean; // used with search text
+  visible: boolean; // to filter by search
   parent: FolderItemIF | null;
   rights: USER_ROLE_TYPE;
+  allowed: boolean; // to check authorization
 }
 
 export type StructureItemType = FileItemIF | FolderItemIF;

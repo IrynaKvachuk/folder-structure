@@ -16,9 +16,9 @@ interface Props {
 
 const FolderItem: React.FC<Props> = (props: Props) => {
   const { data } = props;
-  const { id, name, children, isOpen, visible } = data;
+  const { id, name, children, isOpen, visible, allowed } = data;
 
-  return visible ? (
+  return visible && allowed ? (
     <StructureItemWrapper key={id} data={data}>
       <div className="structure-item_folder">
         <div className="structure-item_folder__caption">

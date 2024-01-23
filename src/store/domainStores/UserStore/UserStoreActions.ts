@@ -25,9 +25,9 @@ export const setUser = (user: UserIE) => {
 };
 
 const open = (node: StructureItemType) => {
-  node.visible = true;
+  node.allowed = true;
 
-  if (node.parent && node.parent.visible === false) {
+  if (node.parent && node.parent.allowed === false) {
     open(node.parent);
   }
 };
@@ -48,7 +48,7 @@ export const getUserStructure = (
   if (isAllowed) {
     open(node);
   } else {
-    node.visible = false;
+    node.allowed = false;
   }
   if (isFolder) {
     const children = (node as FolderItemIF).children || [];

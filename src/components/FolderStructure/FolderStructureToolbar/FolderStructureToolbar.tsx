@@ -14,7 +14,7 @@ const FolderStructureToolbar = () => {
       <UserSetterBtn />
       <SearchBar
         className="folder-structure_toolbar__search-bar"
-        callback={(query: string) => folderStructureStore.filteredFolderStructure(query)}
+        callback={(query: string) => folderStructureStore.setSearchQuery(query)}
       />
     </div>
   );

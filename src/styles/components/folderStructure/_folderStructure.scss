@@ -45,4 +45,12 @@
     min-width: 50rem;
     margin: 1rem auto;
   }
+
+  &_no-data {
+    display: grid;
+    place-items: center;
+    color: $color-font-dark-gray;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
 }

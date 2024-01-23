@@ -9,9 +9,9 @@ interface Props {
 
 const FileItem: React.FC<Props> = (props: Props) => {
   const { data } = props;
-  const { name, visible } = data;
+  const { name, visible, allowed } = data;
 
-  return visible ? (
+  return visible && allowed ? (
     <StructureItemWrapper data={data}>
       <div className="structure-item_file">
         <DocumentIcon size={20} />

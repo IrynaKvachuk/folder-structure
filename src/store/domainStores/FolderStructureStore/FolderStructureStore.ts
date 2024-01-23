@@ -29,9 +29,13 @@ class FolderStructureStore {
   deleteItem = deleteItem;
   toggleFolder = (folder: FolderItemIF) => (folder.isOpen = !folder.isOpen);
   setFolderStructurePending = (isPending: boolean) => (this.isPending = isPending);
-  setSearchQuery = (query: string) => (this.searchQuery = query);
-  filteredFolderStructure = (query: string) => {
-    if (this.rootFolder.length > 0) findStructure(this.rootFolder[0], query.toLowerCase(), null);
+  setSearchQuery = (query: string) => {
+    this.searchQuery = query;
+    this.filteredFolderStructure();
+  };
+  filteredFolderStructure = () => {
+    if (this.rootFolder.length > 0)
+      findStructure(this.rootFolder[0], this.searchQuery.toLowerCase(), null);
   };
 }
 
