@@ -1,0 +1,32 @@
+.login-form {
+  font-size: 1.5rem;
+  padding-bottom: 4rem;
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 1rem;
+  }
+
+  &_submin-btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+    padding: 0.4rem 1rem;
+    font-size: 2rem;
+    color: $color-white;
+    background-color: $color-highlight-bright;
+    border: 0.1rem $color-black solid;
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-black;
+    }
+  }
+
+  &_radio-role {
+    width: 100%;
+  }
+}
