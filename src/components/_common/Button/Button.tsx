@@ -6,6 +6,7 @@ import { onButtonClick } from './events';
 
 interface Props {
   title?: string;
+  type?: 'submit' | 'button';
   loading?: boolean;
   disabled?: boolean;
   itemClassName?: string;
@@ -17,6 +18,7 @@ interface Props {
 const ButtonWrapper: React.FC<Props> = (props: Props) => {
   const {
     title = '',
+    type = 'button',
     disabled = false,
     loading = false,
     itemClassName = '',
@@ -34,6 +36,7 @@ const ButtonWrapper: React.FC<Props> = (props: Props) => {
   return (
     <ItemWrapper className={itemClassName}>
       <button
+        type={type}
         className={`btn app_btn ${buttonClassName}`}
         title={title}
         disabled={disabled}

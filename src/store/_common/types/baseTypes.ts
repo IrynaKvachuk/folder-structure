@@ -5,3 +5,8 @@ export type ButtonClickT = {
   event: React.MouseEvent<HTMLButtonElement>;
   setIsLoading: DispatchT<SetStateActionT<boolean>>;
 };
+
+export type RadioItemType = {
+  label: string;
+  value: string;
+};
