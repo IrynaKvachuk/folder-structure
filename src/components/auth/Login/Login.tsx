@@ -1,8 +1,12 @@
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
 import RadioGroupWrapper from '../../_common/RadioGroup/RadioGroup';
 import { ButtonWrapper } from '../../_common';
 import { USER_ROLE_TYPE } from '../../../store/_common/types/userTypes';
 import TitleWrapper from '../../_common/Title/Title';
+import { useLocalStorage, useStore } from '../../../hooks';
+import { LocalStorageType } from '../../../store/_common/types/baseTypes';
+import { STORAGE_VARIABLE } from '../../../store/_common/variables';
+import { LoginFormData, handleLoginSubmit, setRole } from './utils';
 
 const roleValues = [
   { label: 'admin', value: 'admin' },
@@ -10,26 +14,27 @@ const roleValues = [
   { label: 'viewer', value: 'viewer' }
 ];
 
-type LoginFormData = {
-  role: USER_ROLE_TYPE;
-};
+interface Props {
+  callback?: () => void;
+}
 
-// here goes Login form
-const Login = () => {
-  const defaultRole = roleValues[2];
-  const [formData, setFormData] = useState<LoginFormData>({
-    role: defaultRole.value as USER_ROLE_TYPE
-  });
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
+// Login form goes here
+const Login: React.FC<Props> = (props: Props) => {
+  const { callback = () => {} } = props;
 
-  const setRole = (role: string) => {
-    setFormData((prevState) => ({ ...prevState, role: role as USER_ROLE_TYPE }));
-  };
+  const [storageData, setStorageData] = useLocalStorage<LocalStorageType>(STORAGE_VARIABLE);
+  const { role: storageRole } = storageData.userData;
+
+  const store = useStore();
+  const { userStore } = store;
+
+  const [formData, setFormData] = useState<LoginFormData>({ role: storageRole as USER_ROLE_TYPE });
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form
+      className="login-form"
+      onSubmit={(event) => handleLoginSubmit({ event, formData, userStore, callback })}
+    >
       <TitleWrapper size="md"> Please, choose your role:</TitleWrapper>
       <div className="login-form_content">
         <fieldset className="login-form_radio-role">
@@ -37,8 +42,7 @@ const Login = () => {
             name="userRole"
             title="User role: "
             items={roleValues}
-            defaultValue={defaultRole}
-            callback={setRole}
+            callback={(role) => setRole({ role, setFormData })}
           />
         </fieldset>
       </div>

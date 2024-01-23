@@ -1,10 +1,11 @@
 import React, { useId, useState } from 'react';
 import { RadioItemType } from '../../../store/_common/types/baseTypes';
+import { useEffectOnce } from '../../../hooks';
 
 type Props = {
   name: string;
   items: Array<RadioItemType>;
-  defaultValue?: RadioItemType;
+  defaultValue?: string;
   title?: string;
   className?: string;
   callback?: (value: string) => void;
@@ -21,7 +22,13 @@ const RadioGroupWrapper: React.FC<Props> = (props: Props) => {
   } = props;
   const id = useId();
 
-  const [chosen, setChosen] = useState<RadioItemType>(defaultValue);
+  const [chosen, setChosen] = useState<RadioItemType>();
+
+  useEffectOnce(() => {
+    if (!defaultValue) return;
+    const radioItem = items.find((item) => item.value === defaultValue);
+    setChosen(radioItem);
+  });
 
   return (
     <div className={`radio-group ${className}`}>

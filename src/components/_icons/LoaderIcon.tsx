@@ -7,7 +7,7 @@ const LoaderIcon: React.FC<Props> = (props: Props) => {
   const { size = 50, className = '' } = props;
 
   return (
-    <div className={className}>
+    <div className={`loader-icon ${className}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         style={{ margin: 'auto', background: '0 0' }}

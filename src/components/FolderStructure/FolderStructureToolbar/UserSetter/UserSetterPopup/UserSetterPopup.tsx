@@ -10,14 +10,16 @@ const UserSetterPopup = () => {
   const { type, isOpen } = modalStore;
   const isUserSetterOpen = isOpen && type === MODAL_TYPE.LOGIN;
 
+  const closeModal = () => modalStore.toggleModal(MODAL_TYPE.LOGIN, false);
+
   return (
     <Modal
       isOpen={isUserSetterOpen}
       shouldCloseOnOverlayClick
-      onClose={() => modalStore.toggleModal(MODAL_TYPE.LOGIN, false)}
+      onClose={closeModal}
       className="user-setter_popup"
     >
-      <Login />
+      <Login callback={closeModal} />
     </Modal>
   );
 };

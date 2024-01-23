@@ -16,6 +16,8 @@ body {
 }
 
 .app {
+  min-height: 100vh;
+
   &_layout {
     flex-grow: 1;
     display: grid;

@@ -5,7 +5,30 @@
   padding: 0.4rem;
   border: 0.1rem solid $color-font-dark-gray;
   font-size: 1.3rem;
+  overflow: clip;
 
+  &_user-marker {
+    margin: 0.7rem 0.5rem 0 0.3rem;
+
+    &.admin,
+    &.user,
+    &.viewer {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    &.admin {
+      background-color: $color-font-dark-gray;
+    }
+    &.user {
+      background-color: $color-font-valid;
+    }
+    &.viewer {
+      background-color: $color-highlight-bright;
+    }
+  }
   &_toolbar {
     display: flex;
 

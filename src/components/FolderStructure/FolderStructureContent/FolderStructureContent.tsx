@@ -12,14 +12,14 @@ const FolderStructureContent: React.FC = () => {
   const store = useStore();
 
   const { folderStructureStore } = store;
-  const { isPending } = folderStructureStore;
+  const { rootFolder, isPending } = folderStructureStore;
 
   return (
     <div className="folder-structure_content">
       {isPending ? (
         <LoaderIcon />
-      ) : folderStructureStore.rootFolder.length ? (
-        folderStructureStore.rootFolder.map((item: StructureItemType) => {
+      ) : rootFolder.length ? (
+        rootFolder.map((item: StructureItemType) => {
           const { id, type } = item;
 
           if (type === STRUCTURE_ITEM_TYPE.FILE) return <FileItem key={id} data={item} />;

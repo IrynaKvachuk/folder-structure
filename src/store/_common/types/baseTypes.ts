@@ -1,3 +1,5 @@
+import { UserIE } from './userTypes';
+
 export type DispatchT<A> = (value: A) => void;
 export type SetStateActionT<S> = S | ((prevState: S) => S);
 
@@ -9,4 +11,8 @@ export type ButtonClickT = {
 export type RadioItemType = {
   label: string;
   value: string;
+};
+
+export type LocalStorageType = {
+  userData: UserIE;
 };

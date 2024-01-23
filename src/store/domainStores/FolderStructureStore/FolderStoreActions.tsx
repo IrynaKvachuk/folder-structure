@@ -95,5 +95,7 @@ export const findStructure = (
       findStructure(element, str, node);
     });
   }
+
+  // here go saving to back
   return node;
 };

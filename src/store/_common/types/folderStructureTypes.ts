@@ -1,3 +1,5 @@
+import { USER_ROLE_TYPE } from './userTypes';
+
 export enum STRUCTURE_ITEM_TYPE {
   FOLDER = 'folder',
   FILE = 'file'
@@ -10,6 +12,7 @@ export interface FileItemIF {
   name: string;
   visible: boolean; // used with search text
   parent: FolderItemIF | null;
+  rights: USER_ROLE_TYPE;
 }
 
 export interface FolderItemIF {
@@ -21,6 +24,7 @@ export interface FolderItemIF {
   isOpen: boolean;
   visible: boolean; // used with search text
   parent: FolderItemIF | null;
+  rights: USER_ROLE_TYPE;
 }
 
 export type StructureItemType = FileItemIF | FolderItemIF;

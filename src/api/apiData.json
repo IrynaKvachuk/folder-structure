@@ -3,36 +3,42 @@
   "parentId": "",
   "name": "main-folder",
   "type": "folder",
+  "rights": "viewer",
   "children": [
     {
       "id": "sOcH2D",
       "parentId": "ME9E8F",
       "name": "empty folder",
       "type": "folder",
+      "rights": "viewer",
       "children": []
     },
     {
       "id": "NTJBQB",
       "parentId": "ME9E8F",
-      "name": "folder-1",
+      "name": "viewer folder",
       "type": "folder",
+      "rights": "viewer",
       "children": [
         {
           "id": "W0O21X",
           "parentId": "NTJBQB",
           "name": "index.html",
+          "rights": "viewer",
           "type": "file"
         },
         {
           "id": "s64uAD",
           "parentId": "NTJBQB",
           "name": "fix.js",
+          "rights": "viewer",
           "type": "file"
         },
         {
           "id": "hEEQ9d",
           "parentId": "NTJBQB",
           "name": "style.css",
+          "rights": "viewer",
           "type": "file"
         }
       ]
@@ -40,25 +46,29 @@
     {
       "id": "dXD3Lh",
       "parentId": "ME9E8F",
-      "name": "folder2",
+      "name": "user folder",
       "type": "folder",
+      "rights": "user",
       "children": [
         {
           "id": "IksFNF",
           "parentId": "dXD3Lh",
           "name": "index.html",
+          "rights": "user",
           "type": "file"
         },
         {
           "id": "aYW87n",
           "parentId": "dXD3Lh",
           "name": "script.js",
+          "rights": "user",
           "type": "file"
         },
         {
           "id": "Ktklen",
           "parentId": "dXD3Lh",
           "name": "style.css",
+          "rights": "user",
           "type": "file"
         }
       ]
@@ -66,37 +76,43 @@
     {
       "id": "Oct7W0",
       "parentId": "ME9E8F",
-      "name": "folder with files",
+      "name": "user folder",
       "type": "folder",
+      "rights": "user",
       "children": [
         {
           "id": "eioW7F",
           "parentId": "Oct7W0",
-          "name": "folder-33-images",
+          "name": "admin folder",
           "type": "folder",
+          "rights": "admin",
           "children": [
             {
               "id": "pizM3S",
               "parentId": "eioW7F",
               "name": "chip.png",
+              "rights": "admin",
               "type": "file"
             },
             {
               "id": "NGK5Yi",
               "parentId": "eioW7F",
               "name": "map.png",
+              "rights": "admin",
               "type": "file"
             },
             {
               "id": "3AseT6",
               "parentId": "eioW7F",
               "name": "pattern.png",
+              "rights": "admin",
               "type": "file"
             },
             {
               "id": "xxd6Bf",
               "parentId": "eioW7F",
               "name": "visa.png",
+              "rights": "admin",
               "type": "file"
             }
           ]
@@ -105,12 +121,14 @@
           "id": "Kk7bGw",
           "parentId": "Oct7W0",
           "name": "index.html",
+          "rights": "user",
           "type": "file"
         },
         {
           "id": "NECqo2",
           "parentId": "Oct7W0",
           "name": "style.css",
+          "rights": "user",
           "type": "file"
         }
       ]
@@ -119,6 +137,7 @@
       "id": "N3Jq52",
       "parentId": "ME9E8F",
       "name": "last.txt",
+      "rights": "viewer",
       "type": "file"
     }
   ]
