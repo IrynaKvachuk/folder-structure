@@ -2,7 +2,7 @@ import { ButtonWrapper } from '../../../_common';
 import ArrowIcon from '../../../_icons/ArrowIcon';
 import ToolbarItem from '../ToolbarItem/ToolbarItem';
 import { FolderItemIF } from '../../../../store/_common/types/folderStructureTypes';
-import { useStore } from '../../../../hooks/useStore';
+import { useStore } from '../../../../hooks';
 
 interface Props {
   folder: FolderItemIF;

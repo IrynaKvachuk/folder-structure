@@ -1,7 +1,7 @@
 import { ButtonWrapper } from '../../../_common';
 import ToolbarItem from '../ToolbarItem/ToolbarItem';
 import { StructureItemType } from '../../../../store/_common/types/folderStructureTypes';
-import { useStore } from '../../../../hooks/useStore';
+import { useStore } from '../../../../hooks';
 
 interface Props {
   data: StructureItemType;
