@@ -9,9 +9,11 @@ interface Props {
 
 const StructureItemWrapper = (props: Props) => {
   const { data, children } = props;
+  const { id, rights } = data;
 
   return (
-    <div className="structure-item">
+    <div className="structure-item" data-id={id}>
+      <div className={`structure-item_user-marker ${rights}`} />
       <StructureItemToolbar data={data} />
       {children}
     </div>

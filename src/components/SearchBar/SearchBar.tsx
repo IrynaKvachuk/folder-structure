@@ -3,14 +3,14 @@ import LoaderIcon from '../_icons/LoaderIcon';
 import { onSearchBarChange } from './events';
 import { observer } from 'mobx-react';
 
-interface Props {
+export interface SearchBarProps {
   label?: string;
   placeholder?: string;
   className?: string;
   callback: (query: string) => void;
 }
 
-const SearchBar: React.FC<Props> = (props: Props) => {
+const SearchBar: React.FC<SearchBarProps> = (props: SearchBarProps) => {
   const { label = '', placeholder = 'search..', className = '', callback } = props;
 
   const searchCallback = useCallback((query: string) => callback(query), [callback]);
@@ -29,6 +29,7 @@ const SearchBar: React.FC<Props> = (props: Props) => {
           {label}
           <input
             type="text"
+            data-testid="search-bar_input"
             className="search-bar_input"
             value={query}
             placeholder={placeholder}
