@@ -16,7 +16,6 @@ const FolderStructure: React.FC = () => {
   const { userData } = userStore;
 
   useEffect(() => {
-    if (!storageUserData?.role) return;
     folderStructureStore.loadStructure();
   }, [storageUserData]);
 

@@ -24,7 +24,6 @@ const AuthWrapper: React.FC<Props> = (props: Props) => {
   });
 
   useEffect(() => {
-    if (!userData.id || userData.id === storageUserData.id) return;
     setStorageData({ userData });
   }, [userData]);
 
